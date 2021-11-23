@@ -167,7 +167,7 @@ header {
 
 .actions img {
   width: 100%;
-  max-width: 13rem;
+  max-width: 17rem;
   transition: all 1s;
 }
 
@@ -257,7 +257,7 @@ footer a:hover {
 
 @keyframes zoomIn {
   100% {
-    transform: scale(2);
+    transform: scale(1.6);
   }
 }
 

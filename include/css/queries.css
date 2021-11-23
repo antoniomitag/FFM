@@ -30,21 +30,48 @@
   nav ul li {
     display: none;
   }
+
   .logo {
     display: block;
   }
+
   .market .section-width {
     flex-direction: column;
     align-items: center;
   }
+
   .market-image {
     min-width: 10rem;
   }
+
   .action {
     max-width: 32rem;
   }
+
   .actions img {
     max-width: 22rem;
+  }
+
+  .countdown {
+    width: 45rem;
+    grid-template-columns: 2fr 3fr 3fr 3fr;
+    grid-template-rows: repeat(2, 1fr);
+  }
+
+  .event-start {
+    grid-column: 1 / -1;
+  }
+
+  #days {
+  }
+
+  #hours {
+  }
+
+  #minutes {
+  }
+
+  #seconds {
   }
 }
 

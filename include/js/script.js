@@ -59,6 +59,7 @@ const elements = {
   who: "Everyone is invited! Get some <span>friends</span> over!",
   how: "Add <span>ZedtheRedd</span>, MorteTM, NarwindilTM, or Dravgr!",
   wha: "Yourself! Bring <span>yourself</span> and have fun!",
+  pip: "The <span>First</span> Flatwoods Farmers' Market: PC only",
 };
 
 for (const [el, message] of Object.entries(elements)) {

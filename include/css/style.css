@@ -1,0 +1,268 @@
+.logo img {
+  max-width: 100%;
+}
+
+.logo {
+  max-width: 32rem;
+}
+
+nav {
+  width: 80rem;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.market {
+  background-size: contain;
+  min-height: 45rem;
+  color: white;
+  text-shadow: 0.2rem 0.2rem rgb(46, 46, 46);
+  display: flex;
+  align-items: center;
+  justify-content: left;
+}
+
+.market-content {
+  max-width: 60rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.market-image img {
+  width: 100%;
+  max-width: 40rem;
+}
+
+.section-width {
+  width: 100%;
+  max-width: 102.4rem;
+  display: flex;
+  margin: 0 auto;
+  gap: 7rem;
+  padding: 5rem;
+}
+
+.market {
+  background-image: url("../img/pip-bg.jpg");
+}
+
+.options {
+  align-self: flex-start;
+}
+
+.options li {
+  text-decoration: none;
+  list-style: none;
+  font-size: 1.8rem;
+  line-height: 6.4rem;
+  cursor: pointer;
+  font-variant: small-caps;
+}
+
+.options ul {
+  display: flex;
+  flex-direction: row;
+  gap: 3rem;
+}
+
+.subtitle {
+  align-self: flex-start;
+}
+
+.market h2 {
+  align-self: flex-start;
+  font-family: "Overseer", sans-serif;
+  margin-bottom: 2rem;
+  color: #fbf07c;
+}
+
+.market h1 span {
+  background-color: #fbf07c;
+  color: rgb(46, 46, 46);
+  padding-right: 0.6rem;
+  text-shadow: none;
+}
+
+.special {
+  transition: all 0.3s;
+}
+.webp .special {
+  background-image: url("../img/pip-bg.webp");
+}
+.no-webp .special {
+  background-image: url("../img/pip-bg.webp");
+}
+
+.special-imgs {
+  display: flex;
+  align-self: center;
+}
+
+.special h2 {
+  align-self: center;
+  font-family: "Overseer", sans-serif;
+  color: rgb(255, 255, 255);
+  font-size: 5rem;
+  text-transform: uppercase;
+}
+
+.special .section-width {
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+}
+
+.special-imgs img {
+  width: 10rem;
+  cursor: pointer;
+}
+
+.special-description {
+  font-family: "Comforter", sans-serif;
+  font-size: 4rem;
+  max-width: 70rem;
+  align-self: center;
+  width: 100%;
+  min-height: 120px;
+  padding: 10px;
+  color: white;
+  font-family: "Dancing", cursive;
+  padding: 2rem;
+  text-align: center;
+}
+
+.special-description:hover {
+  color: #fbf07c;
+}
+
+.visible:hover {
+  color: #fff;
+}
+
+.visible {
+  display: block;
+  text-align: left;
+}
+
+.actions h2 {
+  align-self: center;
+  font-family: "Overseer", sans-serif;
+  color: rgb(46, 46, 46);
+  font-size: 5rem;
+  text-transform: uppercase;
+}
+
+.actions .section-width {
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+}
+
+.actions img {
+  width: 100%;
+  max-width: 13rem;
+  transition: all 1s;
+}
+
+.action {
+  display: flex;
+  gap: 3rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 22rem;
+  width: 100%;
+}
+
+.action:hover h3 {
+  color: #1c5692;
+}
+
+.action h3 {
+  font-size: 3rem;
+  color: rgb(46, 46, 46);
+  font-family: "Overseer", sans-serif;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.06rem;
+}
+
+.action span {
+  font-size: 1.4rem;
+  line-height: 2rem;
+}
+
+.action-list {
+  display: flex;
+  gap: 3rem;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+}
+
+.countdown {
+  font-family: "Overseer", sans-serif;
+  font-size: 6rem;
+  text-align: center;
+  margin-top: 4rem;
+}
+footer,
+.minifooter {
+  background: url("../img/foot-bg.jpg");
+  color: white;
+}
+
+footer {
+  min-height: 25px;
+}
+
+.minifooter {
+  padding: 2rem;
+  text-align: center;
+}
+
+.add-us .title {
+  font-family: "Dancing", cursive;
+  font-size: 4rem;
+}
+
+.add-us .names {
+  font-size: 2rem;
+  line-height: 3rem;
+  margin-top: 2rem;
+}
+
+.add-us .names div:hover {
+  color: #fbf07c;
+}
+
+footer a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.action:hover .tospin {
+  transform: rotate(360deg);
+  -webkit-transform: rotate(360deg);
+  -ms-transform: rotate(360deg);
+}
+
+#countdown {
+  width: 363px;
+  display: inline-block;
+  text-align: left;
+}
+
+.nameicon {
+  font-size: 46px;
+  width: auto;
+}
+
+.join names {
+  display: flex;
+}

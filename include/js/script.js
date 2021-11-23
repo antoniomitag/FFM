@@ -25,10 +25,12 @@ var x = setInterval(function () {
   //   ("0" + seconds).slice(-2) +
   //   "s ";
 
-  document.getElementById("days").innerHTML = ("0" + days).slice(-2);
-  document.getElementById("hours").innerHTML = ("0" + hours).slice(-2);
-  document.getElementById("minutes").innerHTML = ("0" + minutes).slice(-2);
-  document.getElementById("seconds").innerHTML = ("0" + seconds).slice(-2);
+  document.getElementById("days").innerHTML = ("0" + days).slice(-2) + "d";
+  document.getElementById("hours").innerHTML = ("0" + hours).slice(-2) + "h";
+  document.getElementById("minutes").innerHTML =
+    ("0" + minutes).slice(-2) + "m";
+  document.getElementById("seconds").innerHTML =
+    ("0" + seconds).slice(-2) + "s";
 
   if (distance < 0) {
     clearInterval(x);

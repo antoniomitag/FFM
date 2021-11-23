@@ -90,12 +90,7 @@ header {
 
 .special {
   transition: all 0.3s;
-}
-.webp .special {
-  background-image: url("../img/pip-bg.webp");
-}
-.no-webp .special {
-  background-image: url("../img/pip-bg.webp");
+  background-image: url("../img/pip-bg.jpg");
 }
 
 .special-imgs {

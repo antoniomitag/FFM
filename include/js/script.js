@@ -15,15 +15,20 @@ var x = setInterval(function () {
   var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
   var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-  document.getElementById("countdown").innerHTML =
-    ("0" + days).slice(-2) +
-    "d " +
-    ("0" + hours).slice(-2) +
-    "h " +
-    ("0" + minutes).slice(-2) +
-    "m " +
-    ("0" + seconds).slice(-2) +
-    "s ";
+  // document.getElementById("countdown").innerHTML =
+  //   ("0" + days).slice(-2) +
+  //   "d " +
+  //   ("0" + hours).slice(-2) +
+  //   "h " +
+  //   ("0" + minutes).slice(-2) +
+  //   "m " +
+  //   ("0" + seconds).slice(-2) +
+  //   "s ";
+
+  document.getElementById("days").innerHTML = ("0" + days).slice(-2);
+  document.getElementById("hours").innerHTML = ("0" + hours).slice(-2);
+  document.getElementById("minutes").innerHTML = ("0" + minutes).slice(-2);
+  document.getElementById("seconds").innerHTML = ("0" + seconds).slice(-2);
 
   if (distance < 0) {
     clearInterval(x);

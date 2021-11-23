@@ -72,3 +72,7 @@ for (const [el, message] of Object.entries(elements)) {
     });
   }
 }
+
+setTimeout(function () {
+  document.body.className = "";
+}, 3000);

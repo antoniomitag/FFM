@@ -126,6 +126,20 @@ header {
   flex-direction: column;
 }
 
+.list h2 {
+  align-self: center;
+  font-family: "Overseer", sans-serif;
+  color: rgb(46, 46, 46);
+  font-size: 5rem;
+  text-transform: uppercase;
+}
+
+.list .section-width {
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+}
+
 .special-imgs img {
   width: 10rem;
   cursor: pointer;
@@ -333,4 +347,39 @@ footer a:hover {
 
 .join names {
   display: flex;
+}
+
+.spacer {
+  height: 4rem;
+}
+
+table {
+  width: 100%;
+  font-size: 2rem;
+  border-collapse: collapse;
+}
+table td,
+table th {
+  border: 0.1rem solid #ddd;
+  padding: 0.8rem;
+}
+
+.na {
+  text-decoration: line-through;
+}
+
+table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+table tr:hover {
+  background-color: #ddd;
+}
+
+table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #1c5692;
+  color: white;
 }

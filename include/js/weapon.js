@@ -12,3 +12,6 @@ const weapons = [
     type: "Junkie's minigun / bashing damage",
   },
 ];
+for (const [row, available, stars, type] of weapons) {
+  document.getElementById("weapons").innerHTML += `<`;
+}

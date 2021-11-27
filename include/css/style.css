@@ -46,6 +46,12 @@ header {
   cursor: pointer;
 }
 
+.legendary-image img {
+  width: 100%;
+  max-width: 80rem;
+  cursor: pointer;
+}
+
 .section-width {
   width: 100%;
   max-width: 102.4rem;

@@ -57,9 +57,9 @@ const elements = {
   AG: "Accessible! You don't use mic? No worries! Drop by and just listen. Follow us around. Throw emotes at us.",
   LU: "Lighthearted! Let's have fun while learning new things about the Wasteland.",
   who: "Everyone is invited! Get some <span>friends</span> over!",
-  how: "Add <span>ZedtheRedd</span>, MorteTM, NarwindilTM, or Dravgr!",
+  how: "Add <span>ZeddtheRed</span>, MorteTM, NarwindilTM, Dravgvr, or CloudChaser87!",
   wha: "Yourself! Bring <span>yourself</span> and have fun!",
-  pip: "The <span>First</span> Flatwoods Farmers' Market: PC only",
+  pip: "The <span>Return</span> of the Flatwoods Farmers' Market: PC only",
 };
 
 for (const [el, message] of Object.entries(elements)) {

@@ -23,6 +23,15 @@ header {
   justify-content: space-around;
 }
 
+.back-arrow {
+  align-self: flex-start;
+  text-shadow: none;
+  font-size: 2rem;
+  text-transform: uppercase;
+  font-variant: small-caps;
+  display: flex;
+}
+
 .market {
   background-size: contain;
   min-height: 45rem;
@@ -59,6 +68,17 @@ header {
   margin: 0 auto;
   gap: 7rem;
   padding: 5rem;
+}
+
+.notice .section-width {
+  padding: 0px;
+}
+
+.notice span {
+  font-size: 2rem;
+  width: 100%;
+  text-align: center;
+  padding: 0.5rem;
 }
 
 .market {

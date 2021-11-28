@@ -705,7 +705,6 @@ function listRangedWeapons() {
       third || "-"
     }</td></tr>`;
     tbody.innerHTML += tr;
-    console.log(third || " ");
   }
   tbody.innerHTML += `<div class="spacer"></div>`;
 }

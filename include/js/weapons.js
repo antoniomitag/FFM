@@ -663,7 +663,7 @@ const outfits = [];
 // console.log(weapons);
 function listMeleeWeapons() {
   let tbody = document.getElementById("meleeWeapons");
-  tbody.innerHTML += `<h2>Melee Weapons</h2><tr><th>ID</th><th>Stars</th><th>Name</th><th>⭐</th><th>⭐⭐</th><th>⭐⭐⭐</th></tr>`;
+  tbody.innerHTML += `<tr><th>ID</th><th>Stars</th><th>Name</th><th>⭐</th><th>⭐⭐</th><th>⭐⭐⭐</th></tr>`;
   for (const id of meleeWeapons) {
     const [row, available, name, first, second, third] = Object.values(id);
     let star = 0;
@@ -687,7 +687,7 @@ function listMeleeWeapons() {
 
 function listRangedWeapons() {
   let tbody = document.getElementById("rangedWeapons");
-  tbody.innerHTML += `<h2>Ranged Weapons</h2><tr><th>ID</th><th>Stars</th><th>Name</th><th>⭐</th><th>⭐⭐</th><th>⭐⭐⭐</th></tr>`;
+  tbody.innerHTML += `<tr><th>ID</th><th>Stars</th><th>Name</th><th>⭐</th><th>⭐⭐</th><th>⭐⭐⭐</th></tr>`;
   for (const id of rangedWeapons) {
     const [row, available, name, first, second, third] = Object.values(id);
     let star = 0;

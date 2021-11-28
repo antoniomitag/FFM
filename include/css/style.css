@@ -122,6 +122,30 @@ header {
   text-shadow: none;
 }
 
+.rew {
+  display: flex;
+  font-size: 2rem;
+  justify-content: space-between;
+  gap: 3rem;
+}
+
+.reward {
+  box-shadow: 2px 2px 20px #e4e4e4;
+  padding: 2rem;
+}
+
+.reward h3 {
+  font-size: 2.5rem;
+  font-family: "Overseer", sans-serif;
+  line-height: 3.5rem;
+  margin-bottom: 2rem;
+}
+
+.rew li {
+  font-size: 2rem;
+  line-height: 2.2rem;
+}
+
 .special {
   transition: all 0.3s;
   background-image: url("../img/pip-bg.jpg");

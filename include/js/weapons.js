@@ -1,3 +1,5 @@
+"use strict";
+
 const meleeWeapons = [
   {
     row: 1,
@@ -25,7 +27,7 @@ const meleeWeapons = [
     secondStar: "40% more power attack damage",
     thirdStar: "Your V.A.T.S. critical meter fills 15% faster",
   },
-  
+
   {
     row: 4,
     available: 1,
@@ -79,7 +81,7 @@ const meleeWeapons = [
     secondStar: "Replenish AP with each kill",
     thirdStar: "Your V.A.T.S. critical meter fills 15% faster",
   },
-  
+
   {
     row: 10,
     available: 1,
@@ -88,7 +90,7 @@ const meleeWeapons = [
     secondStar: "40% faster swing speed",
     thirdStar: "Your V.A.T.S. critical meter fills 15% faster",
   },
-  
+
   {
     row: 11,
     available: 1,
@@ -97,7 +99,7 @@ const meleeWeapons = [
     secondStar: "40% more power attack damage",
     thirdStar: "90% reduced weight",
   },
-  
+
   {
     row: 12,
     available: 1,
@@ -106,7 +108,7 @@ const meleeWeapons = [
     secondStar: "40% faster swing speed",
     thirdStar: "25% less V.A.T.S. Action Point cost",
   },
-  
+
   {
     row: 13,
     available: 1,
@@ -115,7 +117,7 @@ const meleeWeapons = [
     //secondStar: "",
     thirdStar: "Take 40% less damage while power attacking",
   },
-  
+
   {
     row: 14,
     available: 1,
@@ -124,7 +126,7 @@ const meleeWeapons = [
     secondStar: "40% faster swing speed",
     thirdStar: "90% reduced weight",
   },
-  
+
   {
     row: 15,
     available: 1,
@@ -133,7 +135,7 @@ const meleeWeapons = [
     secondStar: "40% faster swing speed",
     thirdStar: "25% less V.A.T.S. Action Point cost",
   },
-  
+
   {
     row: 16,
     available: 1,
@@ -142,10 +144,9 @@ const meleeWeapons = [
     secondStar: "40% faster swing speed",
   },
 
-    {
+  {
     row: 17,
     available: 1,
-    stars: 3,
     name: "Power Fist",
     firstStar: "Damage increases as health decreases",
     secondStar: "40% faster swing speed",
@@ -161,7 +162,7 @@ const rangedWeapons = [
     secondStar: "Bullets explode for area damage",
     thirdStar: "90% reduced weight",
   },
-  
+
   {
     row: 19,
     available: 1,
@@ -558,8 +559,6 @@ const rangedWeapons = [
 ];
 
 const armors = [
-
-
   {
     row: 64,
     available: 1,
@@ -650,7 +649,7 @@ const armors = [
   },
 
   {
-    row: ,
+    row: 74,
     available: 1,
     name: "",
     firstStar: "",
@@ -659,6 +658,59 @@ const armors = [
   },
 ];
 
-const outfits = [
+const outfits = [];
 
-];
+// console.log(weapons);
+function listMeleeWeapons() {
+  let tbody = document.getElementById("meleeWeapons");
+  tbody.innerHTML += `<h2>Melee Weapons</h2><tr><th>ID</th><th>Stars</th><th>Name</th><th>⭐</th><th>⭐⭐</th><th>⭐⭐⭐</th></tr>`;
+  for (const id of meleeWeapons) {
+    const [row, available, name, first, second, third] = Object.values(id);
+    let star = 0;
+    first ? star++ : star;
+    second ? star++ : star;
+    third ? star++ : star;
+    let avail = "";
+    let taken = "";
+    if (available === 0) {
+      avail = 'class="na"';
+    }
+    let tr = `<tr ${avail}><td>${row}</td><td>${"⭐".repeat(
+      star
+    )}</td><td>${name}</td><td>${first}</td><td>${second || "-"}</td><td>${
+      third || "-"
+    }</td></tr>`;
+    tbody.innerHTML += tr;
+  }
+  tbody.innerHTML += `<div class="spacer"></div>`;
+}
+
+function listRangedWeapons() {
+  let tbody = document.getElementById("rangedWeapons");
+  tbody.innerHTML += `<h2>Ranged Weapons</h2><tr><th>ID</th><th>Stars</th><th>Name</th><th>⭐</th><th>⭐⭐</th><th>⭐⭐⭐</th></tr>`;
+  for (const id of rangedWeapons) {
+    const [row, available, name, first, second, third] = Object.values(id);
+    let star = 0;
+    first ? star++ : star;
+    second ? star++ : star;
+    third ? star++ : star;
+    let avail = "";
+    let taken = "";
+    if (available === 0) {
+      avail = 'class="na"';
+    }
+    let tr = `<tr ${avail}><td>${row}</td><td>${"⭐".repeat(
+      star
+    )}</td><td>${name}</td><td>${first}</td><td>${second || "-"}</td><td>${
+      third || "-"
+    }</td></tr>`;
+    tbody.innerHTML += tr;
+    console.log(third || " ");
+  }
+  tbody.innerHTML += `<div class="spacer"></div>`;
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  listMeleeWeapons();
+  listRangedWeapons();
+});

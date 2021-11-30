@@ -839,9 +839,7 @@ let inner = "";
 let row = 0;
 for (const [key, value] of Object.entries(itemsSorted)) {
   inner += `<h2>${key}</h2><table>${tableHeader}`;
-  for (const index of value.sort((a, b) =>
-    a.firstStar > b.firstStar ? 1 : -1
-  )) {
+  for (const index of value.sort((a, b) => (a.name > b.name ? 1 : -1))) {
     //this also sorts the value in alphabetical order of the name of the object
 
     // Check if name contains (Cursed) and add a small info icon if yes

@@ -429,3 +429,19 @@ table th {
   background-color: #1c5692;
   color: white;
 }
+
+.countdown.hidden {
+  grid-template-columns: 1fr;
+  grid-auto-flow: row;
+}
+
+.hidden #days,
+.hidden #hours,
+.hidden #minutes,
+.hidden #seconds {
+  display: none;
+}
+
+.available-0 {
+  text-decoration: line-through;
+}

@@ -1,5 +1,5 @@
 // Set the date we're counting down to
-var countDownDate = new Date(Date.UTC(2021, 10, 28, 19)).getTime();
+var countDownDate = new Date(Date.UTC(2021, 10, 28, 18)).getTime();
 
 // Update the count down every 1 second
 var x = setInterval(function () {
@@ -24,16 +24,18 @@ var x = setInterval(function () {
   //   "m " +
   //   ("0" + seconds).slice(-2) +
   //   "s ";
+  if (distance > 0) {
+    document.getElementById("days").innerHTML = ("0" + days).slice(-2) + "d";
+    document.getElementById("hours").innerHTML = ("0" + hours).slice(-2) + "h";
+    document.getElementById("minutes").innerHTML =
+      ("0" + minutes).slice(-2) + "m";
+    document.getElementById("seconds").innerHTML =
+      ("0" + seconds).slice(-2) + "s";
+  }
 
-  document.getElementById("days").innerHTML = ("0" + days).slice(-2) + "d";
-  document.getElementById("hours").innerHTML = ("0" + hours).slice(-2) + "h";
-  document.getElementById("minutes").innerHTML =
-    ("0" + minutes).slice(-2) + "m";
-  document.getElementById("seconds").innerHTML =
-    ("0" + seconds).slice(-2) + "s";
-
-  if (distance < 0) {
+  if (distance < 0 && document.getElementById("countdown")) {
     clearInterval(x);
+    document.getElementById("countdown").classList.add("hidden");
     document.getElementById("countdowntext").innerHTML =
       "⭐ THE EVENT IS ON ⭐";
   }

@@ -26,6 +26,7 @@ const descriptionsWeapons = {
   Quad: "Quadruple ammo capacity",
   "Stalker's": "If not in combat, +100% VATS accuracy at +50% AP cost",
   "Two Shot": "Shoots an additional projectile",
+  Cursed: "Improved damage, attack rate. Low durability.",
 };
 
 const descriptionsArmor = {
@@ -65,7 +66,7 @@ const items = [
     firstStar: "Assassin's",
     secondStar: "40% faster swing speed",
     thirdStar: "25% less V.A.T.S. Action Point cost",
-    available: 0,
+    available: 1,
   },
 
   {
@@ -831,7 +832,7 @@ function groupBy(data, key) {
 let tbody = document.getElementById("rewards");
 
 let tableHeader =
-  "<thead><tr><th>ID</th><th>Name</th><th>Effect</th><th>⭐</th><th>⭐⭐</th><th>⭐⭐⭐</th></tr>";
+  "<thead><tr><th>ID</th><th>Name</th><th>⭐</th><th class='first-star'>Explanation</th><th>⭐⭐</th><th>⭐⭐⭐</th></tr>";
 
 const itemsSorted = groupBy(items, "category");
 let inner = "";
@@ -842,6 +843,13 @@ for (const [key, value] of Object.entries(itemsSorted)) {
     a.firstStar > b.firstStar ? 1 : -1
   )) {
     //this also sorts the value in alphabetical order of the name of the object
+
+    // Check if name contains (Cursed) and add a small info icon if yes
+    const cursed = index.name.includes("Cursed");
+
+    // if (index.name.includes("Cursed")) {
+    //   index.name += ` <span class="info-cursed" tooltip="Improved damage, attack rate. Low durability.">ℹ</span>`;
+    // }
     let description = "";
     if (
       index.category === "Melee Weapons" ||
@@ -854,9 +862,19 @@ for (const [key, value] of Object.entries(itemsSorted)) {
     row++;
     inner += `<tr class="available-${
       index.available ?? 1
-    }"><td>${row}</td><td>${index.name}</td><td><strong>${
-      index.firstStar
-    }</strong></td><td>${description}</td><td>${
+    }"><td>${row}</td><td>${index.name}&nbsp;${
+      cursed
+        ? "<span class='tooltip'><ion-icon name='information-circle-outline'></ion-icon><span class='tooltip-text'>" +
+          descriptionsWeapons["Cursed"] +
+          "</span></span>"
+        : ""
+    }</td><td><strong>${
+      "<span class='tooltip'>" +
+      index.firstStar +
+      "<span class='tooltip-text'>" +
+      description +
+      "</span></span>"
+    }</strong></td><td class="first-star">${description}</td><td>${
       index.secondStar || " "
     }</td><td>${index.thirdStar || " "}</td></tr>`;
   }

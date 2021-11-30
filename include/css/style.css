@@ -445,3 +445,7 @@ table th {
 .available-0 {
   text-decoration: line-through;
 }
+.reward span {
+  font-size: 2rem;
+  line-height: 2.2rem;
+}

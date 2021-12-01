@@ -10,79 +10,72 @@
     <link rel="stylesheet" type="text/css" href="include/css/queries.css" />
     <link rel="icon" type="image/x-icon" href="include/img/favicon.png" />
   </head>
-</html>
-<header class="mini-header">
-    <nav>
-      <ul>
-        <li><a href="index.html#market">Market</a></li>
-        <li><a href="index.html#events">Events</a></li>
-        <li class="logo mini-logo">
-          <a href="index.html">
-            <img
-              src="include/img/mini-logo.png"
-              alt="logo Flatwood Farmer's Market"
-            />
-          </a>
-        </li>
-        <li><a href="rewards.html">REWARDS</a></li>
-        <li><a href="index.html#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
-<body>  
+  <body>
+    <header class="mini-header">
+      <nav>
+        <ul>
+          <li><a href="index.html#market">Market</a></li>
+          <li><a href="index.html#events">Events</a></li>
+          <li class="logo mini-logo">
+            <a href="index.html">
+              <img
+                src="include/img/mini-logo.png"
+                alt="logo Flatwood Farmer's Market"
+              />
+            </a>
+          </li>
+          <li><a href="rewards.html">REWARDS</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
     <section class="market">
-        <div class="section-width">
-          <div class="market-content">
-            <!-- <h2>NOV 28: 1PM EST / 6PM UTC</h2> -->
-            <h1>Check out <span>Photos</span> from previous events!</h1>
-            <h2></h2>
-          </div>
-          <div class="legendary-image">
-            <picture>
-              <img id="pip" src="include/img/pip-photo.png" alt="Alt Text!" />
-            </picture>
-          </div>
+      <div class="section-width">
+        <div class="market-content">
+          <!-- <h2>NOV 28: 1PM EST / 6PM UTC</h2> -->
+          <h1>Check out <span>Photos</span> from previous events!</h1>
+          <!--h2>Text</h2-->
         </div>
-      </section>  
-    <section class="gallery">
-        <div class="section-width">
-            <div class="gallery-wrap">
-                <h2>First Event: 2021-11-28</h2>
-
-            <!-- Slideshow container -->
-
-
-        <div class="slider">
-        
-                <img class="click" src="include/img/gallery/2021-11-28/Steph1.jpg"/>
-            
-                <img class="click" src="include/img/gallery/2021-11-28/Steph2.jpg"/>
-            
-                <img class="click" src="include/img/gallery/2021-11-28/Steph3.jpg"/>
-
-           
-                <img class="click" src="include/img/gallery/2021-11-28/Steph4.jpg"/>
-
-           
-                <img class="click" src="include/img/gallery/2021-11-28/Zed1.jpg"/>
-            
+        <div class="legendary-image">
+          <picture>
+            <img id="pip" src="include/img/pip-photo.png" alt="Alt Text!" />
+          </picture>
         </div>
-  <br>
-  
-  <!-- The dots/circles -->
-  <div class="dots">
-    <span class="dot" onclick="currentSlide(1)"></span>
-    <span class="dot" onclick="currentSlide(2)"></span>
-    <span class="dot" onclick="currentSlide(3)"></span>
-  </div>            </div>
-        </div>
+      </div>
     </section>
-    
-    
+    <section class="gallery">
+      <div class="section-width">
+        <div class="gallery-wrap">
+          <h2>First Event: 2021-11-28</h2>
+
+          <!-- Slideshow container -->
+
+          <div class="slider">
+            <ul class="gallery" id="gallery"></ul>
+          </div>
+          <br />
+        </div>
+      </div>
+    </section>
+
+    <div class="overlay hide" id="overlay">
+      <div class="image-wrap">
+        <div id="close-button">X</div>
+        <img id="overlay-image" src="#" alt="Farmers Market Photo" />
+        <div id="overlay-text"></div>
+      </div>
+    </div>
+
     <script src="include/js/slider.js"></script>
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-</body>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
 </html>
 
 <!--

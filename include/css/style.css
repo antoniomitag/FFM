@@ -53,7 +53,7 @@ header {
   align-items: center;
   flex-direction: column;
 }
-+ .market-content h4 {
+.market-content h4 {
   align-self: flex-start;
 }
 

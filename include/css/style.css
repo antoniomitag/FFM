@@ -8,7 +8,7 @@
 
 .mini-header .logo {
   max-width: 6.4rem;
-  margin-top: 5px;
+  margin-top: 0.5rem;
 }
 
 body.preload * {
@@ -79,7 +79,7 @@ header {
 }
 
 .notice .section-width {
-  padding: 0px;
+  padding: 0rem;
 }
 
 .notice span {
@@ -138,7 +138,7 @@ header {
 }
 
 .reward {
-  box-shadow: 2px 2px 20px #e4e4e4;
+  box-shadow: 0.2rem 0.2rem 2rem #e4e4e4;
   padding: 2rem;
 }
 
@@ -205,8 +205,8 @@ header {
   max-width: 70rem;
   align-self: center;
   width: 100%;
-  min-height: 120px;
-  padding: 10px;
+  min-height: 12rem;
+  padding: 1rem;
   color: white;
   font-family: "Dancing", cursive;
   padding: 2rem;
@@ -371,7 +371,7 @@ footer a:hover {
 }
 
 /* #countdown {
-  width: 390px;
+  width: 39rem;
   display: inline-block;
   text-align: left;
 } */
@@ -395,7 +395,7 @@ footer a:hover {
 }
 
 .nameicon {
-  font-size: 46px;
+  font-size: 4.6rem;
   width: auto;
 }
 
@@ -431,8 +431,8 @@ table tr:hover {
 }
 
 table th {
-  padding-top: 12px;
-  padding-bottom: 12px;
+  padding-top: 1.2rem;
+  padding-bottom: 1.2rem;
   text-align: left;
   background-color: #1c5692;
   color: white;
@@ -461,23 +461,23 @@ table th {
 .tooltip {
   position: relative;
   display: inline-block;
-  border-bottom: 1px dotted #1c5692; /* If you want dots under the hoverable text */
+  border-bottom: 0.1rem dotted #1c5692; /* If you want dots under the hoverable text */
 }
 
 /* Tooltip text */
 .tooltip .tooltip-text {
   visibility: hidden;
-  width: 120px;
+  width: 12rem;
   background-color: #1c5692;
   color: #fff;
   text-align: center;
-  padding: 10px 5px;
-  border-radius: 6px;
+  padding: 1rem 0.5rem;
+  border-radius: 0.6rem;
 
   /* Position the tooltip text - see examples below! */
   position: absolute;
   z-index: 1;
-  top: -5px;
+  top: -0.5rem;
   left: 105%;
 }
 
@@ -515,8 +515,8 @@ ion-icon {
 }
 
 .slider img:hover {
-  transform: scale(1.02);
-  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+  transform: scale(1.05);
+  box-shadow: 0rem 0.5rem 1rem rgba(0, 0, 0, 0.3);
 }
 
 .gallery .section-width {
@@ -528,9 +528,9 @@ ion-icon {
   background-color: rgba(255, 255, 255, 0.5);
   display: block;
   position: fixed;
-  top: 0;
+  top: 0rem;
   left: 0;
-  backdrop-filter: blur(2px);
+  backdrop-filter: blur(0.2rem);
   /*flex*/
   display: flex;
   justify-content: center;
@@ -552,15 +552,20 @@ ion-icon {
 .image-wrap img {
   max-height: calc(90vh - 4rem);
   max-width: 100%;
+  position: relative;
 }
 
 #overlay-text {
   font-size: 2rem;
   background: rgba(255, 255, 255, 0.7);
   text-align: center;
-  transform: translate(0, -103%);
+  /* transform: translate(0, -103%); */
+  position: absolute;
+  bottom: 0.2rem;
+  left: 0;
+  width: 100%;
   line-height: 3.6rem;
-  padding: 4px 0;
+  padding: 0.4rem 0;
   color: black;
 }
 

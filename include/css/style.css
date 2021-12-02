@@ -511,7 +511,7 @@ ion-icon {
 
 .gallery li {
   list-style: none;
-  flex: 1 1 40rem;
+  flex: 1 1 25rem;
 }
 
 .slider img:hover {
@@ -540,7 +540,9 @@ ion-icon {
 }
 
 .overlay-on {
-  overflow: hidden;
+  height: 100vh;
+  overflow-y: hidden;
+  padding-right: 15px;
 }
 
 .overlay .image-wrap {
@@ -575,13 +577,38 @@ ion-icon {
   right: 0;
   width: 4rem;
   height: 4rem;
-  font-size: 3rem;
-  background: rgba(255, 255, 255, 0.8);
+  font-size: 2.4rem;
+  background: rgba(148, 143, 143, 0.8);
   color: black;
   text-align: center;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .hide {
   display: none;
+}
+
+.arrows {
+  position: absolute;
+  top: 50%;
+  height: 8rem;
+  width: 4rem;
+  background: rgba(148, 143, 143, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.4rem;
+  transform: translateY(-50%);
+  user-select: none;
+}
+
+#left {
+  left: 0;
+}
+
+#right {
+  right: 0;
 }

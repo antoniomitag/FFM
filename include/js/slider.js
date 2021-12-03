@@ -53,6 +53,7 @@ function viewBigger(image) {
   document.getElementById("overlay-image").src = image.src;
   document.getElementById("overlay-text").innerHTML = image.dataset.title;
   window.currImg = image.dataset.name; // sets currImg to the one clicked
+  hideArrows();
 }
 
 /*CLOSE VIEWER function*/
@@ -69,8 +70,10 @@ function onKeyDown(keypressed) {
   } else if (document.body.classList.contains("overlay-on")) {
     if (keypressed.code == "ArrowLeft") {
       changeSlide(left);
+      hideArrows();
     } else if (keypressed.code == "ArrowRight") {
       changeSlide(right);
+      hideArrows();
     }
   }
 }
@@ -109,5 +112,19 @@ function changeSlide(direction) {
       "overlay-image"
     ).src = `include/img/gallery/2021-11-28/${window.currImg}.jpg`;
     document.getElementById("overlay-text").innerHTML = imageDesc[currKey];
+  }
+  hideArrows();
+}
+
+function hideArrows() {
+  if (imageKeys.indexOf(window.currImg) === 0) {
+    document.getElementById("left").style.display = "none";
+    document.getElementById("right").style.display = "flex";
+  } else if (imageKeys.indexOf(window.currImg) === imageKeys.length - 1) {
+    document.getElementById("right").style.display = "none";
+    document.getElementById("left").style.display = "flex";
+  } else {
+    document.getElementById("left").style.display = "flex";
+    document.getElementById("right").style.display = "flex";
   }
 }

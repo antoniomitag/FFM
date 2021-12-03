@@ -30,14 +30,14 @@ const images = {
   "MorteTM-16": "Moments before a baseball bat came out.  - by MorteTM",
   "MorteTM-17": "Hi!  - by MorteTM",
   "ZeddtheRED-01": "Welcome Zedd - by ZeddtheRed",
-  "ZeddtheRED-01": "Trading plans - by ZeddtheRed",
-  "ZeddtheRED-02": "Crafting time in the shelter! - by ZeddtheRed",
-  "ZeddtheRED-03": "Jammin' in the wastes - by ZeddtheRed",
-  "ZeddtheRED-04": "The masterfully made reward url board - by ZeddtheRed",
-  "ZeddtheRED-05": "Costume contest! - by ZeddtheRed",
-  "ZeddtheRED-06":
+  "ZeddtheRED-02": "Trading plans - by ZeddtheRed",
+  "ZeddtheRED-03": "Crafting time in the shelter! - by ZeddtheRed",
+  "ZeddtheRED-04": "Jammin' in the wastes - by ZeddtheRed",
+  "ZeddtheRED-05": "The masterfully made reward url board - by ZeddtheRed",
+  "ZeddtheRED-06": "Costume contest! - by ZeddtheRed",
+  "ZeddtheRED-07":
     "Open mic - Leviathan reading poetry and singing - by ZeddtheRed",
-  "ZeddtheRED-07": "A round of applause for our host! - by ZeddtheRed",
+  "ZeddtheRED-08": "A round of applause for our host! - by ZeddtheRed",
 };
 
 let currImg = ""; // sets current image so the slider knows where to go on next/prev

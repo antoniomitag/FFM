@@ -15,15 +15,6 @@ var x = setInterval(function () {
   var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
   var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-  // document.getElementById("countdown").innerHTML =
-  //   ("0" + days).slice(-2) +
-  //   "d " +
-  //   ("0" + hours).slice(-2) +
-  //   "h " +
-  //   ("0" + minutes).slice(-2) +
-  //   "m " +
-  //   ("0" + seconds).slice(-2) +
-  //   "s ";
   if (distance > 0) {
     document.getElementById("days").innerHTML = ("0" + days).slice(-2) + "d";
     document.getElementById("hours").innerHTML = ("0" + hours).slice(-2) + "h";
@@ -60,8 +51,8 @@ const elements = {
   LU: "Lighthearted! Let's have fun while learning new things about the Wasteland.",
   who: "Everyone is invited! Get some <span>friends</span> over!",
   how: "Add <span>ZeddtheRed</span>, MorteTM, NarwindilTM, Dravgvr, or CloudChaser87!",
-  wha: "Yourself! Bring <span>yourself</span> and have fun!",
-  pip: "The <span>Return</span> of the Flatwoods Farmers' Market: PC only",
+  wha: "Bring <span>yourself</span> and have fun!",
+  pip: "The <span>Second</span> Return of the Flatwoods Farmers' Market: PC only",
 };
 
 for (const [el, message] of Object.entries(elements)) {

@@ -1,6 +1,9 @@
 "use strict";
 
 const weaponsList = document.getElementById("weapons");
+const userList = document.getElementById("user");
+const usernames = document.getElementsByClassName("username");
+const mainTitle = document.getElementById("main-title");
 
 const descriptionsWeaponsShort = {
   "Anti-Armor": "AA",
@@ -51,199 +54,182 @@ const descriptionsWeaponsShort = {
   "+1 Perception": "+1P",
 };
 
-const mortetm = {
-  user: "MorteTM",
-  character: "Alexander",
-  items: [
-    {
-      category: "Ranged Weapons",
-      name: "Pump Action Shotgun",
-      firstStar: "Quad",
-      secondStar: "Bashing damage increased by 50%",
-      thirdStar: "Hits have a chance to generate a Stealth Field",
-      available: 1,
-      featured: 1,
-    },
+const users = {
+  mortetm: {
+    user: "MorteTM",
+    character: "Alexander",
+    items: [
+      {
+        category: "Ranged Weapons",
+        name: "Pump Action Shotgun",
+        firstStar: "Quad",
+        secondStar: "Bashing damage increased by 50%",
+        thirdStar: "Hits have a chance to generate a Stealth Field",
+        available: 1,
+        featured: 1,
+      },
 
-    {
-      category: "Ranged Weapons",
-      name: "Railway Rifle",
-      firstStar: "Gourmand's",
-      secondStar: "Replenish AP with each kill",
-      thirdStar: "90% reduced weight",
-      available: 1,
-    },
+      {
+        category: "Ranged Weapons",
+        name: "Railway Rifle",
+        firstStar: "Gourmand's",
+        secondStar: "Replenish AP with each kill",
+        thirdStar: "90% reduced weight",
+        available: 1,
+      },
 
-    {
-      category: "Ranged Weapons",
-      name: "Gatling Gun",
-      firstStar: "Gourmand's",
-      secondStar: "Bullets explode for area damage",
-      thirdStar: "25% less V.A.T.S. Action Point cost",
-      available: 1,
-    },
+      {
+        category: "Ranged Weapons",
+        name: "Gatling Gun",
+        firstStar: "Gourmand's",
+        secondStar: "Bullets explode for area damage",
+        thirdStar: "25% less V.A.T.S. Action Point cost",
+        available: 1,
+      },
 
-    {
-      category: "Ranged Weapons",
-      name: "The Fixer",
-      firstStar: "Anti-Armor",
-      secondStar: "Bashing damage increased by 50%",
-      thirdStar: "+1 Agility",
-      available: 1,
-    },
+      {
+        category: "Ranged Weapons",
+        name: "The Fixer",
+        firstStar: "Anti-Armor",
+        secondStar: "Bashing damage increased by 50%",
+        thirdStar: "+1 Agility",
+        available: 1,
+      },
 
-    {
-      category: "Ranged Weapons",
-      name: "The Fixer",
-      firstStar: "Anti-Armor",
-      secondStar: "+50% VATS hit chance",
-      thirdStar: "25% less V.A.T.S. Action Point cost",
-      available: 1,
-    },
+      {
+        category: "Ranged Weapons",
+        name: "The Fixer",
+        firstStar: "Anti-Armor",
+        secondStar: "+50% VATS hit chance",
+        thirdStar: "25% less V.A.T.S. Action Point cost",
+        available: 1,
+      },
 
-    {
-      category: "Ranged Weapons",
-      name: "The Fixer",
-      firstStar: "Suppressor's",
-      secondStar: "Bullets explode for area damage",
-      thirdStar: "Faster movement speed while aiming",
-      available: 1,
-    },
+      {
+        category: "Ranged Weapons",
+        name: "The Fixer",
+        firstStar: "Suppressor's",
+        secondStar: "Bullets explode for area damage",
+        thirdStar: "Faster movement speed while aiming",
+        available: 1,
+      },
 
-    {
-      category: "Ranged Weapons",
-      name: "The Fixer",
-      firstStar: "Mutant Slayer's",
-      secondStar: "25% faster fire rate",
-      thirdStar: "15% faster reload",
-      available: 1,
-    },
+      {
+        category: "Ranged Weapons",
+        name: "The Fixer",
+        firstStar: "Mutant Slayer's",
+        secondStar: "25% faster fire rate",
+        thirdStar: "15% faster reload",
+        available: 1,
+      },
 
-    {
-      category: "Ranged Weapons",
-      name: "The Fixer",
-      firstStar: "Executioner's",
-      secondStar: "Bullets explode for area damage",
-      thirdStar: "25% less V.A.T.S. Action Point cost",
-      available: 1,
-    },
+      {
+        category: "Ranged Weapons",
+        name: "The Fixer",
+        firstStar: "Executioner's",
+        secondStar: "Bullets explode for area damage",
+        thirdStar: "25% less V.A.T.S. Action Point cost",
+        available: 1,
+      },
 
-    {
-      category: "Ranged Weapons",
-      name: "The Fixer",
-      firstStar: "Bloodied",
-      secondStar: "+25% damage while aiming",
-      thirdStar: "25% less V.A.T.S. Action Point cost",
-      available: 1,
-    },
+      {
+        category: "Ranged Weapons",
+        name: "The Fixer",
+        firstStar: "Bloodied",
+        secondStar: "+25% damage while aiming",
+        thirdStar: "25% less V.A.T.S. Action Point cost",
+        available: 1,
+      },
 
-    {
-      category: "Ranged Weapons",
-      name: "The Fixer",
-      firstStar: "Mutant Slayer's",
-      secondStar: "25% faster fire rate",
-      thirdStar: "15% faster reload",
-      available: 1,
-    },
-  ],
+      {
+        category: "Ranged Weapons",
+        name: "The Fixer",
+        firstStar: "Mutant Slayer's",
+        secondStar: "25% faster fire rate",
+        thirdStar: "15% faster reload",
+        available: 1,
+      },
+    ],
+  },
+
+  narwindiltm: {
+    user: "NarwindilTM",
+    character: "Alex",
+    items: [
+      {
+        category: "Ranged Weapons",
+        name: "The Fixer",
+        firstStar: "Anti-Armor",
+        secondStar: "+50% VATS hit chance",
+        thirdStar: "25% less V.A.T.S. Action Point cost",
+        available: 1,
+      },
+
+      {
+        category: "Ranged Weapons",
+        name: "The Fixer",
+        firstStar: "Suppressor's",
+        secondStar: "Bullets explode for area damage",
+        thirdStar: "Faster movement speed while aiming",
+        available: 1,
+      },
+
+      {
+        category: "Ranged Weapons",
+        name: "The Fixer",
+        firstStar: "Mutant Slayer's",
+        secondStar: "25% faster fire rate",
+        thirdStar: "15% faster reload",
+        available: 1,
+      },
+
+      {
+        category: "Ranged Weapons",
+        name: "The Fixer",
+        firstStar: "Executioner's",
+        secondStar: "Bullets explode for area damage",
+        thirdStar: "25% less V.A.T.S. Action Point cost",
+        available: 1,
+      },
+
+      {
+        category: "Ranged Weapons",
+        name: "The Fixer",
+        firstStar: "Bloodied",
+        secondStar: "+25% damage while aiming",
+        thirdStar: "25% less V.A.T.S. Action Point cost",
+        available: 1,
+      },
+
+      {
+        category: "Ranged Weapons",
+        name: "The Fixer",
+        firstStar: "Mutant Slayer's",
+        secondStar: "25% faster fire rate",
+        thirdStar: "15% faster reload",
+        available: 1,
+      },
+    ],
+  },
 };
 
-const narwindiltm = {
-  user: "NarwindilTM",
-  character: "Alex",
-  items: [
-    {
-      category: "Ranged Weapons",
-      name: "Pump Action Shotgun",
-      firstStar: "Quad",
-      secondStar: "Bashing damage increased by 50%",
-      thirdStar: "Hits have a chance to generate a Stealth Field",
-      available: 1,
-      featured: 1,
-    },
+function initializePage() {
+  Object.values(users).forEach(function (user) {
+    userList.insertAdjacentHTML(
+      "beforeend",
+      `<li class="username">${user.user}</li>`
+    );
+  });
+  Array.from(usernames).forEach(function (li) {
+    li.addEventListener("click", loadData);
+  });
+}
 
-    {
-      category: "Ranged Weapons",
-      name: "Railway Rifle",
-      firstStar: "Gourmand's",
-      secondStar: "Replenish AP with each kill",
-      thirdStar: "90% reduced weight",
-      available: 1,
-    },
-
-    {
-      category: "Ranged Weapons",
-      name: "Gatling Gun",
-      firstStar: "Gourmand's",
-      secondStar: "Bullets explode for area damage",
-      thirdStar: "25% less V.A.T.S. Action Point cost",
-      available: 1,
-    },
-
-    {
-      category: "Ranged Weapons",
-      name: "The Fixer",
-      firstStar: "Anti-Armor",
-      secondStar: "Bashing damage increased by 50%",
-      thirdStar: "+1 Agility",
-      available: 1,
-    },
-
-    {
-      category: "Ranged Weapons",
-      name: "The Fixer",
-      firstStar: "Anti-Armor",
-      secondStar: "+50% VATS hit chance",
-      thirdStar: "25% less V.A.T.S. Action Point cost",
-      available: 1,
-    },
-
-    {
-      category: "Ranged Weapons",
-      name: "The Fixer",
-      firstStar: "Suppressor's",
-      secondStar: "Bullets explode for area damage",
-      thirdStar: "Faster movement speed while aiming",
-      available: 1,
-    },
-
-    {
-      category: "Ranged Weapons",
-      name: "The Fixer",
-      firstStar: "Mutant Slayer's",
-      secondStar: "25% faster fire rate",
-      thirdStar: "15% faster reload",
-      available: 1,
-    },
-
-    {
-      category: "Ranged Weapons",
-      name: "The Fixer",
-      firstStar: "Executioner's",
-      secondStar: "Bullets explode for area damage",
-      thirdStar: "25% less V.A.T.S. Action Point cost",
-      available: 1,
-    },
-
-    {
-      category: "Ranged Weapons",
-      name: "The Fixer",
-      firstStar: "Bloodied",
-      secondStar: "+25% damage while aiming",
-      thirdStar: "25% less V.A.T.S. Action Point cost",
-      available: 1,
-    },
-
-    {
-      category: "Ranged Weapons",
-      name: "The Fixer",
-      firstStar: "Mutant Slayer's",
-      secondStar: "25% faster fire rate",
-      thirdStar: "15% faster reload",
-      available: 1,
-    },
-  ],
-};
+function loadData() {
+  const user = this.innerText;
+  updateInventory(users[user.toLowerCase()]);
+  displayItems(users[user.toLowerCase()]);
+}
 
 function updateInventory(inventory) {
   inventory.items.forEach(function (item) {
@@ -254,12 +240,13 @@ function updateInventory(inventory) {
   });
 }
 
-function displayItems(items) {
-  document.title = `${items.user} Trade List`;
-  items.items.forEach(function (item) {
-    const short = `${descriptionsWeaponsShort[item.firstStar]}${
+function displayItems(user) {
+  document.title = `${user.user} Trade List`;
+  weaponsList.innerHTML = "";
+  user.items.forEach(function (item) {
+    const short = `${descriptionsWeaponsShort[item.firstStar]}/${
       item.secondStar ? descriptionsWeaponsShort[item.secondStar] : ""
-    }${item.thirdStar ? descriptionsWeaponsShort[item.thirdStar] : ""}`;
+    }/${item.thirdStar ? descriptionsWeaponsShort[item.thirdStar] : ""}`;
     let stars = 1;
     if (item.secondStar) stars = 2;
     if (item.thirdStar) stars = 3;
@@ -283,10 +270,13 @@ function displayItems(items) {
   <div class="3rd star">${item.thirdStar}</div>
   </div></div>
 `;
+    mainTitle.innerHTML = `${user.user}'s Trading List`;
     weaponsList.insertAdjacentHTML("beforeend", html);
   });
 }
 
-updateInventory(mortetm);
+initializePage();
 
-displayItems(mortetm);
+updateInventory(users["mortetm"]);
+
+displayItems(users["mortetm"]);

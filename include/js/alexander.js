@@ -2,105 +2,248 @@
 
 const weaponsList = document.getElementById("weapons");
 
-const descriptionsWeapons = {
-  "Anti-Armor": "Ignores 50% of your target's armor",
-  "Aristocrat's": "Damage increases as caps increases",
-  "Assassin's": "+50% damage to Humans",
-  "Berserker's": "Lower Damage Resistance increases damage dealt",
-  Bloodied: "Damage increases as health decreases",
-  "Executioner's": "+50% damage when your target is below 40% health",
-  "Exterminator's": "+50% damage to Mirelurks and bugs",
-  Furious: "Damage increased after each consecutive hit on the same target",
-  "Ghoul Slayer": "+50% damage to ghouls",
-  "Gourmand's": "Damage increases as you fill your hunger and thirst",
-  "Hunter's": "+50% damage to animals",
-  Instigating: "Double damage if target is full health",
-  "Juggernaut's": "Damage increases as health increases",
-  "Junkie's": "Damage increases when suffering from addictions",
-  "Mutant's": "Damage increased by 5% for each mutation",
-  "Mutant Slayer": "+50% damage to super mutants",
-  Nocturnal: "Damage increases with the night",
-  "Suppressor's": "Reduce your target's damage output by 25% for 5s",
-  "Troubleshooter's": "+50% damage to robots",
-  "Vampire's": "Gain brief health regeneration when you hit an enemy",
-  "Zealot's": "+50% damage to Scorched",
-  "Medic's": "V.A.T.S. crits will heal you and your group",
-  Quad: "Quadruple ammo capacity",
-  "Stalker's": "If not in combat, +100% VATS accuracy at +50% AP cost",
-  "Two Shot": "Shoots an additional projectile",
-  Cursed: "Improved damage, attack rate. Low durability.",
+const descriptionsWeaponsShort = {
+  "Anti-Armor": "AA",
+  "Aristocrat's": "Ari",
+  "Assassin's": "Ass",
+  "Berserker's": "Ber",
+  Bloodied: "B",
+  "Executioner's": "Exe",
+  "Exterminator's": "Ext",
+  Furious: "F",
+  "Ghoul Slayer": "Gh",
+  "Gourmand's": "G",
+  "Hunter's": "H",
+  Instigating: "I",
+  "Juggernaut's": "Jugg",
+  "Junkie's": "J",
+  "Mutant's": "M",
+  "Mutant Slayer's": "MS",
+  Nocturnal: "Noc",
+  "Suppressor's": "S",
+  "Troubleshooter's": "T",
+  "Vampire's": "V",
+  "Zealot's": "Z",
+  "Medic's": "Med",
+  Quad: "Q",
+  "Stalker's": "St",
+  "Two Shot": "TS",
+  Cursed: "CURSED",
+  "+25% damage while aiming": "hit",
+  "25% faster fire rate": "ffr",
+  "Bashing damage increased by 50%": "bash",
+  "+50% Critical Shot Damage": "50c",
+  "+50% VATS hit chance": "50h",
+  "+50% limb damage": "50l",
+  "Bullets explode for area damage": "E",
+  "Last Shot": "last",
+  "Replenish AP with each kill": "15",
+  "15% critical fill": "15crit",
+  "15% faster reload": "15r",
+  "25% less V.A.T.S. Action Point cost": "25",
+  "250 DR while reloading": "250",
+  "50 DR while aiming": "50dr",
+  "90% reduced weight": "90",
+  "+1 Agility": "+1A",
+  "Breaks 50% slower": "break",
+  "Hits have a chance to generate a Stealth Field": "gho",
+  "Faster movement speed while aiming": "ms",
+  "+1 Perception": "+1P",
 };
 
-const descriptionsArmor = {
-  "Aristocrat's":
-    "Grants up to +20 Energy Resistance and Damage Resistance, the higher your caps",
-  "Assassin's": "-15% damage from Humans",
-  "Auto Stim":
-    "Automatically use a Stimpak when hit while health is 25% or less, once every 60 seconds",
-  Bolstering:
-    "Grants up to +35 Energy Resistance and Damage Resistance, the lower your health",
-  Chameleon: "Blend with the environment while sneaking and not moving",
-  Cloaking: "Being hit in melee generates a Stealth Field once per 30 seconds",
-  "Exterminator's": "-15% damage from Mirelurks and bugs",
-  "Ghoul Slayer's": "-15% damage from ghouls",
-  "Hunter's": "-15% damage from animals",
-  "Life Saving":
-    "When incapacitated, gain a 50% chance to revive yourself with a Stimpak, once every minute",
-  "Mutant's": "+10 Damage Resistance and Energy Resistance if you are mutated",
-  "Mutant Slayer's": "-15% damage from Super Mutants",
-  Nocturnal: "Damage and Energy Resistance increase at night",
-  "Overeater's":
-    "Increases Damage Reduction up to 6% as you fill your hunger and thirst meters",
-  Regenerating: "Slowly regenerate health while not in combat",
-  "Troubleshooter's": "-15% damage from robots",
-  Unyielding: "Gain up to +3 to all stats (except END) when low health",
-  "Vanguard's":
-    "Grants up to +35 Energy Resistance and Damage Resistance, the higher your health",
-  Weightless:
-    "Weighs 90% less and does not count as armor for the Chameleon mutation",
-  "Zealot's": "-15% damage from Scorched",
-};
-
-const weaponNames = {
-  ".44 Pistol": ".44Pistol",
-  "10mm Pistol": "10mmPistol.png",
-  "Plasma Rifle": "plasmaGun.png",
-  "Plasma Gun": "plasmaGun.png",
-};
-
-const inventory = {
+const mortetm = {
   user: "MorteTM",
   character: "Alexander",
   items: [
     {
-      category: "Melee Weapons",
-      name: "Minigun",
-      firstStar: "Assassin's",
-      secondStar: "40% faster swing speed",
+      category: "Ranged Weapons",
+      name: "Pump Action Shotgun",
+      firstStar: "Quad",
+      secondStar: "Bashing damage increased by 50%",
+      thirdStar: "Hits have a chance to generate a Stealth Field",
+      available: 1,
+      featured: 1,
+    },
+
+    {
+      category: "Ranged Weapons",
+      name: "Railway Rifle",
+      firstStar: "Gourmand's",
+      secondStar: "Replenish AP with each kill",
+      thirdStar: "90% reduced weight",
+      available: 1,
+    },
+
+    {
+      category: "Ranged Weapons",
+      name: "Gatling Gun",
+      firstStar: "Gourmand's",
+      secondStar: "Bullets explode for area damage",
       thirdStar: "25% less V.A.T.S. Action Point cost",
       available: 1,
     },
 
     {
-      category: "Melee Weapons",
-      name: "Combat Shotgun",
-      firstStar: "Instigating",
-      secondStar: "40% faster swing speed",
+      category: "Ranged Weapons",
+      name: "The Fixer",
+      firstStar: "Anti-Armor",
+      secondStar: "Bashing damage increased by 50%",
+      thirdStar: "+1 Agility",
       available: 1,
     },
 
     {
-      category: "Melee Weapons",
-      name: "Plasma Rifle",
-      firstStar: "Juggernaut's",
-      secondStar: "40% more power attack damage",
-      thirdStar: "Your V.A.T.S. critical meter fills 15% faster",
-      available: 0,
+      category: "Ranged Weapons",
+      name: "The Fixer",
+      firstStar: "Anti-Armor",
+      secondStar: "+50% VATS hit chance",
+      thirdStar: "25% less V.A.T.S. Action Point cost",
+      available: 1,
+    },
+
+    {
+      category: "Ranged Weapons",
+      name: "The Fixer",
+      firstStar: "Suppressor's",
+      secondStar: "Bullets explode for area damage",
+      thirdStar: "Faster movement speed while aiming",
+      available: 1,
+    },
+
+    {
+      category: "Ranged Weapons",
+      name: "The Fixer",
+      firstStar: "Mutant Slayer's",
+      secondStar: "25% faster fire rate",
+      thirdStar: "15% faster reload",
+      available: 1,
+    },
+
+    {
+      category: "Ranged Weapons",
+      name: "The Fixer",
+      firstStar: "Executioner's",
+      secondStar: "Bullets explode for area damage",
+      thirdStar: "25% less V.A.T.S. Action Point cost",
+      available: 1,
+    },
+
+    {
+      category: "Ranged Weapons",
+      name: "The Fixer",
+      firstStar: "Bloodied",
+      secondStar: "+25% damage while aiming",
+      thirdStar: "25% less V.A.T.S. Action Point cost",
+      available: 1,
+    },
+
+    {
+      category: "Ranged Weapons",
+      name: "The Fixer",
+      firstStar: "Mutant Slayer's",
+      secondStar: "25% faster fire rate",
+      thirdStar: "15% faster reload",
+      available: 1,
     },
   ],
 };
 
-console.log(inventory);
+const narwindiltm = {
+  user: "NarwindilTM",
+  character: "Alex",
+  items: [
+    {
+      category: "Ranged Weapons",
+      name: "Pump Action Shotgun",
+      firstStar: "Quad",
+      secondStar: "Bashing damage increased by 50%",
+      thirdStar: "Hits have a chance to generate a Stealth Field",
+      available: 1,
+      featured: 1,
+    },
+
+    {
+      category: "Ranged Weapons",
+      name: "Railway Rifle",
+      firstStar: "Gourmand's",
+      secondStar: "Replenish AP with each kill",
+      thirdStar: "90% reduced weight",
+      available: 1,
+    },
+
+    {
+      category: "Ranged Weapons",
+      name: "Gatling Gun",
+      firstStar: "Gourmand's",
+      secondStar: "Bullets explode for area damage",
+      thirdStar: "25% less V.A.T.S. Action Point cost",
+      available: 1,
+    },
+
+    {
+      category: "Ranged Weapons",
+      name: "The Fixer",
+      firstStar: "Anti-Armor",
+      secondStar: "Bashing damage increased by 50%",
+      thirdStar: "+1 Agility",
+      available: 1,
+    },
+
+    {
+      category: "Ranged Weapons",
+      name: "The Fixer",
+      firstStar: "Anti-Armor",
+      secondStar: "+50% VATS hit chance",
+      thirdStar: "25% less V.A.T.S. Action Point cost",
+      available: 1,
+    },
+
+    {
+      category: "Ranged Weapons",
+      name: "The Fixer",
+      firstStar: "Suppressor's",
+      secondStar: "Bullets explode for area damage",
+      thirdStar: "Faster movement speed while aiming",
+      available: 1,
+    },
+
+    {
+      category: "Ranged Weapons",
+      name: "The Fixer",
+      firstStar: "Mutant Slayer's",
+      secondStar: "25% faster fire rate",
+      thirdStar: "15% faster reload",
+      available: 1,
+    },
+
+    {
+      category: "Ranged Weapons",
+      name: "The Fixer",
+      firstStar: "Executioner's",
+      secondStar: "Bullets explode for area damage",
+      thirdStar: "25% less V.A.T.S. Action Point cost",
+      available: 1,
+    },
+
+    {
+      category: "Ranged Weapons",
+      name: "The Fixer",
+      firstStar: "Bloodied",
+      secondStar: "+25% damage while aiming",
+      thirdStar: "25% less V.A.T.S. Action Point cost",
+      available: 1,
+    },
+
+    {
+      category: "Ranged Weapons",
+      name: "The Fixer",
+      firstStar: "Mutant Slayer's",
+      secondStar: "25% faster fire rate",
+      thirdStar: "15% faster reload",
+      available: 1,
+    },
+  ],
+};
 
 function updateInventory(inventory) {
   inventory.items.forEach(function (item) {
@@ -111,29 +254,39 @@ function updateInventory(inventory) {
   });
 }
 
-updateInventory(inventory);
-
 function displayItems(items) {
-  console.log(`User: ${items.user}`);
-  console.log(`Character: ${items.character}`);
-
+  document.title = `${items.user} Trade List`;
   items.items.forEach(function (item) {
-    const html = `<div class="item">
-  <div class="title"></div>
-  <div class="name">${item.name}</div>
-  <div class="stars">${item.stars}</div>
-  <div class="1st star">${item.firstStar}</div>
+    const short = `${descriptionsWeaponsShort[item.firstStar]}${
+      item.secondStar ? descriptionsWeaponsShort[item.secondStar] : ""
+    }${item.thirdStar ? descriptionsWeaponsShort[item.thirdStar] : ""}`;
+    let stars = 1;
+    if (item.secondStar) stars = 2;
+    if (item.thirdStar) stars = 3;
+    const html = `
+    <div class="card-front">
+    <div class="item${item.featured ? " featured" : ""}${
+      item.available ? "" : " hidden"
+    }">
+  <div class="stars">${"⭐".repeat(stars)} </div>
+  <div class="name">${short} ${item.name}</div>
+  <div class="stars"></div>
+    <div class="image">
+  <img src="/include/img/weapons/${item.image}"></div>
+</div></div>
+<div class="card-back">
+<div class="item${item.featured ? " featured" : ""}${
+      item.available ? "" : " hidden"
+    }">
+<div class="1st star">${item.firstStar}</div>
   <div class="2nd star">${item.secondStar}</div>
   <div class="3rd star">${item.thirdStar}</div>
-  <div class="image">
-  <img src="/include/img/weapons/${item.image}"></div>
-  <div class="short">XXYYZZ</div>
-</div>`;
-    console.log(html);
-    item.available === 1
-      ? weaponsList.insertAdjacentHTML("beforeend", html)
-      : 0;
+  </div></div>
+`;
+    weaponsList.insertAdjacentHTML("beforeend", html);
   });
 }
 
-displayItems(inventory);
+updateInventory(mortetm);
+
+displayItems(mortetm);

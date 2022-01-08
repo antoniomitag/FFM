@@ -298,12 +298,6 @@ function initializePage() {
 }
 //adds number of stars (depending on number of filled stars properties) and adds the link to the image depending on the name of the weapon
 
-function toCamelCase(str) {
-  let camelCase = "";
-  const [first, ...others] = item.name.toLowerCase().trim().split(" ");
-  const output = ``;
-}
-
 function inventoryUpdate(inventory) {
   Object.values(inventory).forEach(function (user) {
     Object.values(user.items).forEach(function (item) {

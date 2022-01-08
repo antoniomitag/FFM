@@ -79,6 +79,8 @@ body {
   gap: 2rem;
   flex-wrap: wrap;
   justify-content: center;
+  max-width: 1380px;
+  margin: 0 auto;
 }
 
 .card-back {
@@ -92,24 +94,49 @@ body {
 
 .stars {
   font-size: 2.4rem;
+  margin-top: 2rem;
 }
 
 .name {
   font-size: 2.4rem;
 }
 
-.sheet ul li {
+.username {
   font-size: 2rem;
   list-style: none;
   cursor: pointer;
   color: #fff;
+  text-align: center;
 }
 
-.sheet ul {
-  display: flex;
+.usernames {
   gap: 2rem;
   justify-content: center;
-  margin-bottom: 1.2rem;
+  margin-bottom: 2.2rem;
+  display: flex;
+}
+
+.username::before {
+  display: block;
+  content: attr(title);
+  font-weight: bold;
+  height: 0;
+  overflow: hidden;
+  visibility: hidden;
+}
+
+.username:hover {
+  font-weight: bold;
+}
+
+.other-trades {
+  display: flex;
+  justify-content: center;
+}
+
+.other-trades span {
+  font-size: 2rem;
+  color: #fff;
 }
 
 .main-title {

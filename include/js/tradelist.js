@@ -1,7 +1,7 @@
 "use strict";
 
 const weaponsList = document.getElementById("weapons");
-const userList = document.getElementById("user");
+const userList = document.getElementById("users");
 const usernames = document.getElementsByClassName("username");
 const mainTitle = document.getElementById("main-title");
 
@@ -61,11 +61,11 @@ const users = {
     items: [
       {
         category: "Ranged Weapons",
-        name: "Pump Action Shotgun",
+        name: "Minigun",
         firstStar: "Quad",
         secondStar: "Bashing damage increased by 50%",
         thirdStar: "Hits have a chance to generate a Stealth Field",
-        available: 0,
+        available: 1,
       },
 
       {
@@ -275,11 +275,22 @@ const users = {
 };
 //runs update inventory, sets the list of users in the top menu, adds event listeners to all of those
 function initializePage() {
+  // First check if there are parameters and make sure you load the correct user
+  const urlParams = new URLSearchParams(window.location.search);
+  let usrParam = "mortetm";
+  if (urlParams.has("user")) {
+    usrParam = urlParams.get("user");
+  }
+  // Update the inventory (global), load the usernames, call the function that has "mortetm" as default, otherwise call the username from the url
   inventoryUpdate(users);
+  displayItems(users[usrParam]);
+  console.log(usrParam);
+
+  // Add event listeners to switch users to the username
   Object.values(users).forEach(function (user) {
     userList.insertAdjacentHTML(
       "beforeend",
-      `<li class="username">${user.user}</li>`
+      `<span class="username" title="${user.user}">${user.user}</span>`
     );
   });
   Array.from(usernames).forEach(function (li) {
@@ -298,10 +309,15 @@ function inventoryUpdate(inventory) {
   });
 }
 
-// Function that loads data when called from the event listener on top of the page
+// Function that loads data when called from the event listener on top of the page, it reads and sets the url parameters that deal with checking which user's items are displayed
 function loadData() {
+  const url = new URL(window.location.href);
+  let params = url.searchParams;
   const user = this.innerText;
   displayItems(users[user.toLowerCase()]);
+  params.set("user", user.toLowerCase());
+  console.log(url.href);
+  window.location.href = url.href;
 }
 
 // function updateInventory(inventory) {
@@ -351,5 +367,3 @@ function displayItems(user) {
 }
 
 initializePage();
-
-displayItems(users["mortetm"]);

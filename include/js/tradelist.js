@@ -319,7 +319,7 @@ function loadData() {
 // Create template literal and populate the weapons list with weapons
 function displayItems(user) {
   document.title = `${user.user} Trade List`;
-  //weaponsList.innerHTML = "";
+  weaponsList.innerHTML = "";
   user.items.forEach(function (item) {
     const short = `${descriptionsWeaponsShort[item.firstStar]}/${
       item.secondStar ? descriptionsWeaponsShort[item.secondStar] : ""
@@ -328,30 +328,27 @@ function displayItems(user) {
     if (item.secondStar) stars = 2;
     if (item.thirdStar) stars = 3;
     const html = `
-    <div class="card__side card--front${item.featured ? " featured" : ""}${
+    <div class="card${item.featured ? " featured" : ""}${
       item.available ? "" : " hidden"
     }">
-    <div class="item">
-    <div class="featured-star">♥</div>
-  <div class="stars">${"☆".repeat(stars)} </div>
-  <div class="name">${short} ${item.name}</div>
-  <div class="stars"></div>
-    <div class="image">
-  <img src="/include/img/weapons/${item.image}"></div>
-</div></div>
-<div class="card__side card--back${item.featured ? " featured" : ""}${
-      item.available ? "" : " hidden"
-    }">
-<div class="item${item.featured ? " featured" : ""}${
-      item.available ? "" : " hidden"
-    }">
-<div class="1st star">${item.firstStar}</div>
-  <div class="2nd star">${item.secondStar}</div>
-  <div class="3rd star">${item.thirdStar}</div>
-  </div></div>
+    <div class="card__side card__side--front">
+      <div class="featured-star">♥</div>
+      <div class="stars">${"☆".repeat(stars)}</div>
+      <div class="name">${short} ${item.name}</div>
+      <div class="image">
+      <img src="/include/img/weapons/${item.image}">
+      </div>
+    </div>
+    <div class="card__side card__side--back">
+    <div class="name">${item.name}</div>
+      <div class="1st star">${item.firstStar}</div>
+      <div class="2nd star">${item.secondStar}</div>
+      <div class="3rd star">${item.thirdStar}</div>
+    </div>
+  </div>
 `;
     mainTitle.innerHTML = `${user.user}'s Trading List`;
-    //weaponsList.insertAdjacentHTML("beforeend", html);
+    weaponsList.insertAdjacentHTML("beforeend", html);
   });
 }
 

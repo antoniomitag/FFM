@@ -212,9 +212,72 @@ const users = {
       },
     ],
   },
-};
 
+  zeddthered: {
+    user: "ZeddTheRED",
+    character: " ",
+    items: [
+      {
+        category: "Ranged Weapons",
+        name: "The Fixer",
+        firstStar: "Anti-Armor",
+        secondStar: "+50% VATS hit chance",
+        thirdStar: "25% less V.A.T.S. Action Point cost",
+        available: 1,
+        featured: 1,
+      },
+
+      {
+        category: "Ranged Weapons",
+        name: "The Fixer",
+        firstStar: "Suppressor's",
+        secondStar: "Bullets explode for area damage",
+        thirdStar: "Faster movement speed while aiming",
+        available: 1,
+      },
+
+      {
+        category: "Ranged Weapons",
+        name: "The Fixer",
+        firstStar: "Mutant Slayer's",
+        secondStar: "25% faster fire rate",
+        thirdStar: "15% faster reload",
+        available: 1,
+      },
+
+      {
+        category: "Ranged Weapons",
+        name: "The Fixer",
+        firstStar: "Executioner's",
+        secondStar: "Bullets explode for area damage",
+        thirdStar: "25% less V.A.T.S. Action Point cost",
+        available: 1,
+        featured: 1,
+      },
+
+      {
+        category: "Ranged Weapons",
+        name: "The Fixer",
+        firstStar: "Bloodied",
+        secondStar: "+25% damage while aiming",
+        thirdStar: "25% less V.A.T.S. Action Point cost",
+        available: 1,
+      },
+
+      {
+        category: "Ranged Weapons",
+        name: "The Fixer",
+        firstStar: "Mutant Slayer's",
+        secondStar: "25% faster fire rate",
+        thirdStar: "15% faster reload",
+        available: 1,
+      },
+    ],
+  },
+};
+//runs update inventory, sets the list of users in the top menu, adds event listeners to all of those
 function initializePage() {
+  inventoryUpdate(users);
   Object.values(users).forEach(function (user) {
     userList.insertAdjacentHTML(
       "beforeend",
@@ -225,22 +288,35 @@ function initializePage() {
     li.addEventListener("click", loadData);
   });
 }
-
-function loadData() {
-  const user = this.innerText;
-  updateInventory(users[user.toLowerCase()]);
-  displayItems(users[user.toLowerCase()]);
-}
-
-function updateInventory(inventory) {
-  inventory.items.forEach(function (item) {
-    if (item.thirdStar) item.stars = 3;
-    else if (item.secondStar) item.stars = 2;
-    else item.stars = 1;
-    item.image = item.name.toLowerCase().split(" ").join("").concat(".png");
+//adds number of stars (depending on number of filled stars properties) and adds the link to the image depending on the name of the weapon
+function inventoryUpdate(inventory) {
+  Object.values(inventory).forEach(function (user) {
+    Object.values(user.items).forEach(function (item) {
+      if (item.thirdStar) item.stars = 3;
+      else if (item.secondStar) item.stars = 2;
+      else item.stars = 1;
+      item.image = item.name.toLowerCase().split(" ").join("").concat(".png");
+    });
   });
 }
 
+// Function that loads data when called from the event listener on top of the page
+function loadData() {
+  const user = this.innerText;
+  displayItems(users[user.toLowerCase()]);
+}
+
+// function updateInventory(inventory) {
+//   //count the stars, get images
+//   inventory.items.forEach(function (item) {
+//     if (item.thirdStar) item.stars = 3;
+//     else if (item.secondStar) item.stars = 2;
+//     else item.stars = 1;
+//     item.image = item.name.toLowerCase().split(" ").join("").concat(".png");
+//   });
+// }
+
+// Create template literal and populate the weapons list with weapons
 function displayItems(user) {
   document.title = `${user.user} Trade List`;
   weaponsList.innerHTML = "";
@@ -256,7 +332,8 @@ function displayItems(user) {
       item.available ? "" : " hidden"
     }">
     <div class="item">
-  <div class="stars">${"⭐".repeat(stars)} </div>
+    <div class="featured-star">♥</div>
+  <div class="stars">${"☆".repeat(stars)} </div>
   <div class="name">${short} ${item.name}</div>
   <div class="stars"></div>
     <div class="image">
@@ -279,7 +356,5 @@ function displayItems(user) {
 }
 
 initializePage();
-
-updateInventory(users["mortetm"]);
 
 displayItems(users["mortetm"]);

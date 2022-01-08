@@ -1,0 +1,108 @@
+body {
+  min-height: 100vh;
+}
+/* .sheet {
+    width: 1920px;
+    height: 1080px;
+    display: block;
+    margin: auto 0;
+    background: rgb(155, 150, 251);
+  } */
+.item {
+  padding: 0.2rem;
+  border: 0.1rem solid #fff;
+  margin-bottom: 0.3rem;
+  width: 42.6rem;
+  height: 22rem;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+.item img {
+  width: 100%;
+  max-width: 42rem;
+  min-width: 30rem;
+}
+.weapons {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card-back {
+  display: none;
+}
+
+.stars,
+.name {
+  text-align: center;
+}
+
+.stars {
+  font-size: 2.4rem;
+}
+
+.name {
+  font-size: 2.4rem;
+}
+
+.sheet ul li {
+  font-size: 2rem;
+  list-style: none;
+  cursor: pointer;
+  color: #fff;
+}
+
+.sheet ul {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  margin-bottom: 1.2rem;
+}
+
+.main-title {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #fff;
+}
+
+.featured .item {
+  border: 1px solid #fff;
+}
+
+.hidden {
+  display: none;
+}
+
+.top-bg {
+  background: url("/include/img/background/top_bp.png");
+  width: 100%;
+  padding-bottom: 10.15625%;
+}
+.bot-bg {
+  background: url("/include/img/background/bot_bp.png");
+  width: 100%;
+  padding-bottom: 10.15625%;
+}
+.sheet {
+  background: url("/include/img/background/mid_bp.png");
+  width: 100%;
+}
+
+.featured-star {
+  width: 200px;
+  height: 39px;
+  position: absolute;
+  top: 7px;
+  left: -71px;
+  transform: rotate(-41deg);
+  text-align: center;
+  font-size: 3.2rem;
+  border: 1px solid white;
+  display: none;
+}
+
+.featured .featured-star {
+  display: block;
+}

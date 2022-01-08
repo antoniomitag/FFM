@@ -319,7 +319,7 @@ function loadData() {
 // Create template literal and populate the weapons list with weapons
 function displayItems(user) {
   document.title = `${user.user} Trade List`;
-  weaponsList.innerHTML = "";
+  //weaponsList.innerHTML = "";
   user.items.forEach(function (item) {
     const short = `${descriptionsWeaponsShort[item.firstStar]}/${
       item.secondStar ? descriptionsWeaponsShort[item.secondStar] : ""
@@ -351,7 +351,7 @@ function displayItems(user) {
   </div></div>
 `;
     mainTitle.innerHTML = `${user.user}'s Trading List`;
-    weaponsList.insertAdjacentHTML("beforeend", html);
+    //weaponsList.insertAdjacentHTML("beforeend", html);
   });
 }
 

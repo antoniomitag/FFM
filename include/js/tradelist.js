@@ -70,7 +70,7 @@ const users = {
 
       {
         category: "Ranged Weapons",
-        name: "Railway Rifle",
+        name: "Enclave Plasma Rifle",
         firstStar: "Gourmand's",
         secondStar: "Replenish AP with each kill",
         thirdStar: "90% reduced weight",
@@ -89,7 +89,7 @@ const users = {
 
       {
         category: "Ranged Weapons",
-        name: "The Fixer",
+        name: "Plasma Rifle",
         firstStar: "Anti-Armor",
         secondStar: "Bashing damage increased by 50%",
         thirdStar: "+1 Agility",
@@ -284,7 +284,6 @@ function initializePage() {
   // Update the inventory (global), load the usernames, call the function that has "mortetm" as default, otherwise call the username from the url
   inventoryUpdate(users);
   displayItems(users[usrParam]);
-  console.log(usrParam);
 
   // Add event listeners to switch users to the username
   Object.values(users).forEach(function (user) {
@@ -298,13 +297,29 @@ function initializePage() {
   });
 }
 //adds number of stars (depending on number of filled stars properties) and adds the link to the image depending on the name of the weapon
+
+function toCamelCase(str) {
+  let camelCase = "";
+  const [first, ...others] = item.name.toLowerCase().trim().split(" ");
+  const output = ``;
+}
+
 function inventoryUpdate(inventory) {
   Object.values(inventory).forEach(function (user) {
     Object.values(user.items).forEach(function (item) {
       if (item.thirdStar) item.stars = 3;
       else if (item.secondStar) item.stars = 2;
       else item.stars = 1;
-      item.image = item.name.toLowerCase().split(" ").join("").concat(".png");
+
+      //make camelCase out of weapon name to create image name
+      let first = "";
+      let others = [];
+      [first, ...others] = item.name.toLowerCase().split(" ");
+      let words = first;
+      others.forEach(function (word) {
+        words += word.replace(word[0], word[0].toUpperCase());
+      });
+      item.image = words.concat(".png");
     });
   });
 }
@@ -316,7 +331,6 @@ function loadData() {
   const user = this.innerText;
   displayItems(users[user.toLowerCase()]);
   params.set("user", user.toLowerCase());
-  console.log(url.href);
   window.location.href = url.href;
 }
 

@@ -10,7 +10,9 @@ body {
     background: rgb(155, 150, 251);
   } */
 
-.weapons {
+.card {
+  perspective: 150rem;
+  -moz-perspective: 150rem;
   position: relative;
 }
 
@@ -21,7 +23,8 @@ body {
   left: 0;
   width: 100%;
   backface-visibility: hidden;
-  /* box-shadow: 0 1.5rem 4rem rgba($color-black, 0.15); */
+  overflow: hidden;
+  box-shadow: 0 1.5rem 4rem rgba(#000, 0.15);
 
   /*Antonio addition*/
   padding: 0.2rem;
@@ -29,11 +32,13 @@ body {
   width: 42.6rem;
   height: 22rem;
   color: #fff;
-  position: relative;
   overflow: hidden;
 }
 
-.card--back {
+.card__side--front {
+}
+
+.card__side--back {
   transform: rotateY(180deg);
 }
 
@@ -43,6 +48,10 @@ body {
 
 .card:hover .card__side--back {
   transform: rotateY(0);
+}
+
+.weapons {
+  position: relative;
 }
 
 .card img {

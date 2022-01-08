@@ -65,8 +65,7 @@ const users = {
         firstStar: "Quad",
         secondStar: "Bashing damage increased by 50%",
         thirdStar: "Hits have a chance to generate a Stealth Field",
-        available: 1,
-        featured: 1,
+        available: 0,
       },
 
       {
@@ -85,6 +84,7 @@ const users = {
         secondStar: "Bullets explode for area damage",
         thirdStar: "25% less V.A.T.S. Action Point cost",
         available: 1,
+        featured: 1,
       },
 
       {
@@ -163,6 +163,7 @@ const users = {
         secondStar: "+50% VATS hit chance",
         thirdStar: "25% less V.A.T.S. Action Point cost",
         available: 1,
+        featured: 1,
       },
 
       {
@@ -251,17 +252,19 @@ function displayItems(user) {
     if (item.secondStar) stars = 2;
     if (item.thirdStar) stars = 3;
     const html = `
-    <div class="card-front">
-    <div class="item${item.featured ? " featured" : ""}${
+    <div class="card-front${item.featured ? " featured" : ""}${
       item.available ? "" : " hidden"
     }">
+    <div class="item">
   <div class="stars">${"⭐".repeat(stars)} </div>
   <div class="name">${short} ${item.name}</div>
   <div class="stars"></div>
     <div class="image">
   <img src="/include/img/weapons/${item.image}"></div>
 </div></div>
-<div class="card-back">
+<div class="card-back${item.featured ? " featured" : ""}${
+      item.available ? "" : " hidden"
+    }">
 <div class="item${item.featured ? " featured" : ""}${
       item.available ? "" : " hidden"
     }">

@@ -5,6 +5,7 @@ body {
     rgba(155, 150, 251, 1) 0%,
     rgba(195, 245, 255, 1) 100%
   );
+  min-height: 100vh;
 }
 /* .sheet {
     width: 1920px;
@@ -17,7 +18,8 @@ body {
   padding: 0.2rem;
   border: 0.1rem solid black;
   margin-bottom: 0.3rem;
-  width: fit-content;
+  width: 42.6rem;
+  height: 22rem;
 }
 .item img {
   width: 100%;
@@ -59,4 +61,12 @@ ul {
 .main-title {
   text-align: center;
   margin-bottom: 2rem;
+}
+
+.featured .item {
+  border: 2px solid red;
+}
+
+.hidden {
+  display: none;
 }

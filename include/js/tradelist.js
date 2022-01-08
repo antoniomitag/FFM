@@ -222,7 +222,6 @@ const users = {
         name: "The Fixer",
         firstStar: "Anti-Armor",
         secondStar: "+50% VATS hit chance",
-        thirdStar: "25% less V.A.T.S. Action Point cost",
         available: 1,
         featured: 1,
       },
@@ -233,7 +232,7 @@ const users = {
         firstStar: "Suppressor's",
         secondStar: "Bullets explode for area damage",
         thirdStar: "Faster movement speed while aiming",
-        available: 1,
+        available: 0,
       },
 
       {
@@ -241,7 +240,6 @@ const users = {
         name: "The Fixer",
         firstStar: "Mutant Slayer's",
         secondStar: "25% faster fire rate",
-        thirdStar: "15% faster reload",
         available: 1,
       },
 
@@ -321,9 +319,9 @@ function displayItems(user) {
   document.title = `${user.user} Trade List`;
   weaponsList.innerHTML = "";
   user.items.forEach(function (item) {
-    const short = `${descriptionsWeaponsShort[item.firstStar]}/${
-      item.secondStar ? descriptionsWeaponsShort[item.secondStar] : ""
-    }/${item.thirdStar ? descriptionsWeaponsShort[item.thirdStar] : ""}`;
+    const short = `${descriptionsWeaponsShort[item.firstStar]}${
+      item.secondStar ? "/" + descriptionsWeaponsShort[item.secondStar] : ""
+    }${item.thirdStar ? "/" + descriptionsWeaponsShort[item.thirdStar] : ""}`;
     let stars = 1;
     if (item.secondStar) stars = 2;
     if (item.thirdStar) stars = 3;
@@ -342,8 +340,8 @@ function displayItems(user) {
     <div class="card__side card__side--back">
     <div class="name">${item.name}</div>
       <div class="1st star">${item.firstStar}</div>
-      <div class="2nd star">${item.secondStar}</div>
-      <div class="3rd star">${item.thirdStar}</div>
+      <div class="2nd star">${item.secondStar ? item.secondStar : ""}</div>
+      <div class="3rd star">${item.thirdStar ? item.thirdStar : ""}</div>
     </div>
   </div>
 `;

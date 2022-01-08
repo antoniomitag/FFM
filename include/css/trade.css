@@ -56,6 +56,14 @@ body {
   transform: rotateY(0);
 }
 
+.card__side--back .name {
+  margin-bottom: 2rem;
+}
+
+.card__side--back .star {
+  margin-bottom: 0.6rem;
+}
+
 .weapons {
   position: relative;
 }

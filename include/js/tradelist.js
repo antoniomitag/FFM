@@ -328,7 +328,7 @@ function displayItems(user) {
     if (item.secondStar) stars = 2;
     if (item.thirdStar) stars = 3;
     const html = `
-    <div class="card-front${item.featured ? " featured" : ""}${
+    <div class="card__side card--front${item.featured ? " featured" : ""}${
       item.available ? "" : " hidden"
     }">
     <div class="item">
@@ -339,7 +339,7 @@ function displayItems(user) {
     <div class="image">
   <img src="/include/img/weapons/${item.image}"></div>
 </div></div>
-<div class="card-back${item.featured ? " featured" : ""}${
+<div class="card__side card--back${item.featured ? " featured" : ""}${
       item.available ? "" : " hidden"
     }">
 <div class="item${item.featured ? " featured" : ""}${

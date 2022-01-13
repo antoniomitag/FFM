@@ -170,6 +170,7 @@ body {
   width: 100%;
   background-repeat-y: repeat;
   background-size: contain;
+  min-height: 80vh;
 }
 
 .featured-star {

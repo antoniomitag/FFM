@@ -1,5 +1,5 @@
 // Set the date we're counting down to
-var countDownDate = new Date(Date.UTC(2021, 10, 28, 18)).getTime();
+var countDownDate = new Date(Date.UTC(2022, 1, 13, 18)).getTime();
 
 // Update the count down every 1 second
 var x = setInterval(function () {
@@ -55,16 +55,12 @@ const elements = {
   pip: "The <span>Second</span> Return of the Flatwoods Farmers' Market: PC only",
 };
 
+const displaySPECIALmsg = function (element) {};
+
 for (const [el, message] of Object.entries(elements)) {
-  if (el.length === 2) {
-    document.getElementById(el).addEventListener("click", function () {
-      specialClick(message);
-    });
-  } else if (el.length === 3) {
-    document.getElementById(el).addEventListener("click", function () {
-      mainClick(message);
-    });
-  }
+  document.getElementById(el).addEventListener("click", function () {
+    el.length === 2 ? specialClick(message) : mainClick(message);
+  });
 }
 
 setTimeout(function () {

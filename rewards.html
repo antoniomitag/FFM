@@ -5,89 +5,138 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Flatwoods Farmers' Market</title>
+    <!-- Google Tag Manager -->
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-KX83B6K");
+    </script>
+    <!-- End Google Tag Manager -->
     <link rel="stylesheet" type="text/css" href="include/css/general.css" />
     <link rel="stylesheet" type="text/css" href="include/css/style.css" />
     <link rel="stylesheet" type="text/css" href="include/css/queries.css" />
     <link rel="icon" type="image/x-icon" href="include/img/favicon.png" />
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-8GC6RTCL5P"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-8GC6RTCL5P");
+    </script>
   </head>
-</html>
-<body class="preload">
-  <header class="mini-header">
-    <nav>
-      <ul>
-        <li><a href="index.html#market">Market</a></li>
-        <li><a href="rewards.html">REWARDS</a></li>
-        <li class="logo mini-logo">
-          <a href="index.html">
-            <img
-            src="include/img/mini-logo.png"
-            alt="logo Flatwood Farmer's Market"
-            />
-          </a>
-        </li>
-        <li><a href="gallery.html">Photos</a></li>
-        <li><a href="index.html#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
- <section class="market">
-    <div class="section-width">
-      <div class="market-content">
-        <!-- <h2>NOV 28: 1PM EST / 6PM UTC</h2> -->
-        <h1>Choose <span>Legendary</span> rewards here!</h1>
-        <h2>Then tell NarwindilTM the line numbers* you chose:</h2>
+
+  <body class="preload">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-KX83B6K"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe
+    ></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <header class="mini-header">
+      <nav>
+        <ul>
+          <li><a href="index.html#market">Market</a></li>
+          <li><a href="rewards.html">REWARDS</a></li>
+          <li class="logo mini-logo">
+            <a href="index.html">
+              <img
+                src="include/img/mini-logo.png"
+                alt="logo Flatwood Farmer's Market"
+              />
+            </a>
+          </li>
+          <li><a href="gallery.html">Photos</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <section class="market">
+      <div class="section-width">
+        <div class="market-content">
+          <!-- <h2>NOV 28: 1PM EST / 6PM UTC</h2> -->
+          <h1>Choose <span>Legendary</span> rewards here!</h1>
+          <h2>Then tell NarwindilTM the line numbers* you chose:</h2>
+        </div>
+        <div class="legendary-image">
+          <picture>
+            <img id="pip" src="include/img/pip-stars.png" alt="Alt Text!" />
+          </picture>
+        </div>
       </div>
-      <div class="legendary-image">
-        <picture>
-          <img id="pip" src="include/img/pip-stars.png" alt="Alt Text!" />
-        </picture>
+    </section>
+    <section class="list">
+      <div class="section-width">
+        <h2 class="special-title">REWARDS LIST</h2>
+        <div class="rew">
+          <div class="reward first-reward">
+            <h3>👑 First Reward</h3>
+            <ul>
+              <li>3 items from the rewards list (mix them as you like)</li>
+              <li>3 plans</li>
+              <li>3 outfits</li>
+            </ul>
+          </div>
+          <div class="reward second-reward">
+            <h3>🎂 Second Reward</h3>
+            <ul>
+              <li>2 items from the rewards list (mix them as you like)</li>
+              <li>2 plans</li>
+              <li>2 outfits</li>
+            </ul>
+          </div>
+          <div class="reward third-reward">
+            <h3>🍪 Third Reward</h3>
+            <ul>
+              <li>1 item from the rewards list (mix them as you like)</li>
+              <li>1 plan</li>
+              <li>1 outfit</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="reward">
+          <h3>Instructions</h3>
+          <span
+            >When choosing your rewards, choose three more as reserve, and
+            organize your reward list by importance. If there are people
+            claiming rewards before you, they might choose the rewards you
+            already chose and in that case you will get the next reward on your
+            list.<br />The items that are crossed over are items that have
+            recently been claimed and have not yet been removed from the
+            list.</span
+          >
+        </div>
+
+        <div class="rewards" id="rewards"></div>
       </div>
-    </div>
-  </section>  
-  <section class="list">
-    <div class="section-width">
-    <h2 class="special-title">REWARDS LIST</h2>
-    <div class="rew">
-    <div class="reward first-reward">
-      <h3>👑 First Reward</h3>
-      <ul>        
-        <li>  3 items from the rewards list (mix them as you like)</li>
-        <li>  3 plans</li>
-        <li>  3 outfits</li>
-      </ul>
-    </div>
-    <div class="reward second-reward">
-      <h3>🎂  Second Reward</h3>
-      <ul>        
-        <li>  2 items from the rewards list (mix them as you like)</li>
-        <li>  2 plans</li>
-        <li>  2 outfits</li>
-      </ul>
-    </div>
-    <div class="reward third-reward">
-      <h3>🍪 Third Reward</h3>
-      <ul>        
-        <li>  1 item from the rewards list (mix them as you like)</li>
-        <li>  1 plan</li>
-        <li>  1 outfit</li>
-      </ul>
-    </div>
-  </div>
+    </section>
 
-  <div class="reward">
-    <h3>Instructions</h3>
-    <span>When choosing your rewards, choose three more as reserve, and organize your reward list by importance. If there are people claiming rewards before you, they might choose the rewards you already chose and in that case you will get the next reward on your list.<br>The items that are crossed over are items that have recently been claimed and have not yet been removed from the list.</span>
-  </div>
-
-    <div class="rewards" id="rewards">
-
-    </div>
-    </div>
-  </section>
-  
-
-  <script src="include/js/weapons.js"></script>
-  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-</body>
+    <script src="include/js/weapons.js"></script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
 </html>

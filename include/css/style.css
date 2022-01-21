@@ -509,6 +509,10 @@ ion-icon {
   transition: all 0.2s ease-in-out;
 }
 
+.lazy-img {
+  filter: blur(20px);
+}
+
 .gallery li {
   list-style: none;
   flex: 1 1 25rem;

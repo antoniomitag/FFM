@@ -50,7 +50,7 @@ let imageDesc = Object.values(images); // array of descriptions
 function viewBigger(image) {
   document.body.classList.toggle("overlay-on");
   document.getElementById("overlay").classList.remove("hide");
-  document.getElementById("overlay-image").src = image.src;
+  document.getElementById("overlay-image").src = image.dataset.src;
   document.getElementById("overlay-text").innerHTML = image.dataset.title;
   window.currImg = image.dataset.name; // sets currImg to the one clicked
   hideArrows();
@@ -92,7 +92,7 @@ function closeOnClick(event) {
 
 /*Generate gallery*/
 for (const [name, title] of Object.entries(images)) {
-  imgString += `<li><img class="click" data-title="${title}" data-name="${name}" onclick="viewBigger(this)" src="include/img/gallery/2021-11-28/${name}.jpg"/></li>`;
+  imgString += `<li><img class="click" data-title="${title}" data-name="${name}" onclick="viewBigger(this)" src="include/img/gallery/2021-11-28/small/${name}.jpg" data-src="include/img/gallery/2021-11-28/big/${name}.jpg"/></li>`;
 }
 
 document.getElementById("gallery").innerHTML = imgString;
@@ -110,7 +110,7 @@ function changeSlide(direction) {
     currKey -= dir;
     document.getElementById(
       "overlay-image"
-    ).src = `include/img/gallery/2021-11-28/${window.currImg}.jpg`;
+    ).src = `include/img/gallery/2021-11-28/big/${window.currImg}.jpg`;
     document.getElementById("overlay-text").innerHTML = imageDesc[currKey];
   }
   hideArrows();
